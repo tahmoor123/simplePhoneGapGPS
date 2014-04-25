@@ -7,7 +7,27 @@ dests['Student Centre'] = {lat: "43.77389", lon: "-79.50294"};
 dests['Vari Hall'] = {lat: "43.772757", lon: "-79.503423"}; 
 dests['Steacie Science and Engineering Library'] = {lat: "43.773753", lon: "-79.505993"}; 
 dests['Technology Enhanced Learning'] = {lat: "43.771291", lon: "-79.500694"}; 
-dests['Makkah'] = {lat: "21.427378", lon: "39.814838"}; 
+dests['Accolade East Bldg'] = {lat: "43.772959", lon: "-79.500077"};
+dests['Central Square'] = {lat: "43.772868", lon: "-79.504677"};
+dests['Chemistry Bldg'] = {lat: "43.773354", lon: "-79.507791"};
+dests['Petrie Science and Engineering Bldg'] = {lat: "43.773567", lon: "-79.506970"};
+dests['Health Nursing and Environmental '] = {lat: "43.771224", lon: "-79.504984"};
+dests['Osgoode Hall Law school'] = {lat: "43.770610", lon: "-79.504524"};
+dests['Life Science Bldg'] = {lat: "43.774255", lon: "-79.508318"};
+dests['York Lanes'] = {lat: "43.774545", lon: "-79.501520"};
+dests['Schulic School of Business'] = {lat: "43.773519", lon: "-79.498866"};
+dests['Ross Building'] = {lat: "43.773157", lon: "-79.504319"};
+dests['Tait McKenzie'] = {lat: "43.774856", lon: "-79.507959"};
+dests['Stedman Lecture Halls'] = {lat: "43.774327", lon: "-79.503312"};
+dests['Seneca@York'] = {lat: "43.771865", lon: "-79.499211"};
+dests['William Small Centre'] = {lat: "43.772999", lon: "-79.507622"};
+dests['Winter College'] = {lat: "43.776519", lon: "-79.501977"};
+dests['Stong College'] = {lat: "43.772434", lon: "-79.508190"};
+dests['Tennis Canada'] = {lat: "43.771894", lon: "-79.511575"};
+dests['Mclaughlin College'] = {lat: "43.776810", lon: "-79.502482"};
+dests['Norman Bethune College'] = {lat: "43.773000", lon: "-79.509081"};
+
+
 
 
 // Wait for phonegap to load.
@@ -25,6 +45,13 @@ function populateDests()
 		$("#destinations").append('<li><a href="#" onClick="findDest(\'' + key + '\',' + dests[key].lat + ',' + dests[key].lon + ')";>' + key + '</a></li>');
 	}
 }
+navigator.geolocation.getCurrentPosition (function (pos)
+{
+  var lat = pos.coords.latitude;
+  var lng = pos.coords.longitude;
+  $("#lat").text (lat);
+  $("#lng").text (lng);
+});
 
 // Global variables.
 var destinationPosition;
@@ -103,4 +130,3 @@ function onError()
 {
 	console.log('Error');
 }
-
